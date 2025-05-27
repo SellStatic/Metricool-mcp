@@ -30,7 +30,7 @@ FROM python:3.12-slim-bookworm
 
 WORKDIR /app
  
-COPY --from=uv /root/.local /root/.local
+# Removed unnecessary COPY step
 COPY --from=uv --chown=app:app /app/.venv /app/.venv
 
 # Place executables in the environment at the front of the path
